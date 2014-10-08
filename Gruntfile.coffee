@@ -424,39 +424,20 @@ module.exports = (grunt) ->
                 ]
 
             wetboewBuild:
-                files: [
-                    expand: true
-                    cwd: '<%= pkg.themepath %>dist/unmin'
-                    src: [
-                        '**/*.*'
-                        '!ajax/**/*.*'
-                        '!**/logo.*'
-                        '!**/favicon*.*'
-                        '!demos/**/*.*'
-                        '!docs/**/*.*'
-                        '!test/**/*.*'
-                        '!theme/**/*.*'
-                        '!*.html'
-                    ]
-                    dest: 'build/js/lib/wet-boew/'
-                ,
-                    expand: true
-                    cwd: 'lib/theme-gcwu-fegc/dist/unmin'
-                    src: [
-                        'css/**/*.*'
-                        'assets/**/*.*'
-
-                        '!ajax/**/*.*'
-                        '!**/logo.*'
-                        '!**/favicon*.*'
-                        '!demos/**/*.*'
-                        '!docs/**/*.*'
-                        '!test/**/*.*'
-                        '!theme/**/*.*'
-                        '!*.html'
-                    ]
-                    dest: 'build/js/lib/wet-boew/'
+                expand: true
+                cwd: '<%= pkg.themepath %>dist/unmin'
+                src: [
+                    '**/*.*'
+                    '!ajax/**/*.*'
+                    '!**/logo.*'
+                    '!**/favicon*.*'
+                    '!demos/**/*.*'
+                    '!docs/**/*.*'
+                    '!test/**/*.*'
+                    '!theme/**/*.*'
+                    '!*.html'
                 ]
+                dest: 'build/js/lib/wet-boew/'
 
             wetboewDist:
                 expand: true
@@ -739,7 +720,7 @@ module.exports = (grunt) ->
 
             jsCore:
                 options:
-                    banner: '/*! <%= corepkg.name %> <%= grunt.template.today("dd-mm-yyyy HH:MM:ss") %> : v. <%= corepkg.version %> \n * \n * <%= corepkg.description %> \n **/\n'
+                    banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy HH:MM:ss") %> : v. <%= pkg.version %> \n * \n * <%= pkg.description %> \n **/\n'
 
                 expand: true
                 cwd: 'build/js/RAMP/'
@@ -752,7 +733,7 @@ module.exports = (grunt) ->
 
             jsPlugins:
                 options:
-                        banner: '/*! <%= corepkg.name %> Plugins <%= grunt.template.today("dd-mm-yyyy HH:MM:ss") %> : v. <%= corepkg.version %> \n * \n * <%= corepkg.description %> \n **/\n'
+                        banner: '/*! <%= pkg.name %> Plugins <%= grunt.template.today("dd-mm-yyyy HH:MM:ss") %> : v. <%= pkg.version %> \n * \n * <%= pkg.description %> \n **/\n'
 
                 expand: true
                 cwd: 'build/js/plugins/'
@@ -1101,7 +1082,6 @@ module.exports = (grunt) ->
                 options:
                     base: 'dist'
                     port: 3003
-                    livereload: 35730
                     keepalive: true
 
         watch:

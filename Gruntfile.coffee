@@ -592,8 +592,10 @@ module.exports = (grunt) ->
                     src: '**/*.js'
                     dest: 'build/js/RAMP/'
                 ,
-                    src: 'src/js/RAMP/Modules/theme.js'
-                    dest: 'build/js/RAMP/'
+                    expand: true
+                    cwd: 'src'
+                    src: 'js/RAMP/Modules/theme.js'
+                    dest: 'build/'
                 ]
 
             jsPlugins:

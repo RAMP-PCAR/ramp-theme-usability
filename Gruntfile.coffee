@@ -1180,7 +1180,7 @@ module.exports = (grunt) ->
             tar:
                 options:
                     mode: 'tar'
-                    archive: 'tarball/<%= corepkg.name %> <%= corepkg.version %>.tar'
+                    archive: 'tarball/<%= pkg.name %> <%= pkg.version %>.tar'
                 files: [
                     expand: true
                     src: '**/*'
@@ -1190,7 +1190,7 @@ module.exports = (grunt) ->
             zip:
                 options:
                     mode: 'zip'
-                    archive: 'tarball/<%= corepkg.name %> <%= corepkg.version %>.zip',
+                    archive: 'tarball/<%= pkg.name %> <%= pkg.version %>.zip',
                     level: 9
 
                 files: [

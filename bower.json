@@ -1,0 +1,36 @@
+{
+    "name": "ramp-theme-usability",
+    "version": "3.0.0",
+    "homepage": "http://ramp-pcar.github.io",
+    "authors": [
+        "BeSD - SA Team"
+    ],
+    "description": "RAMP GIS viewer - Canada Goose; Sample of an implementation of RAMP with Usability Theme",
+    "keywords": [
+        "ramp",
+        "gis",
+        "viewer",
+        "map",
+        "theme",
+        "usability"
+    ],
+    "license": "none",
+    "ignore": [
+        ".git*",
+        ".travis.yml",
+        ".editorconfig",
+        "node_modules",
+        "test",
+        "./lib"
+    ],
+    "dependencies": {
+        "ramp-pcar": "https://github.com/RAMP-PCAR/RAMP-PCAR.git#v3.0.0",
+        "theme-gcwu-fegc": "https://github.com/wet-boew/theme-gcwu-fegc.git#4.0.5"
+    },
+    "moduleType": [
+        "globals"
+    ],
+    "resolutions": {
+        "DataTables": "1.10.1"
+    }
+}

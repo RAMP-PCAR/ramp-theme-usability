@@ -1,8 +1,8 @@
 {
     "name": "ramp-theme-usability",
     "subname": "Reusable Accessible Mapping Platform - Usability Theme",
-    "version": "3.0.1",
-    "description": "RAMP GIS viewer - Canada Goose; Sample of an implementation of RAMP with Usability Theme",
+    "version": "4.0.0",
+    "description": "RAMP GIS viewer - Dragonfly; Sample of an implementation of RAMP with Usability Theme",
     "main": "index.js",
     "url": "http://tfs.int.ec.gc.ca:8080/tfs/dc/_git/RAMP",
     "scripts": {

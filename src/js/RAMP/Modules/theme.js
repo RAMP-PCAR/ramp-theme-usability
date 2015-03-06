@@ -15,8 +15,8 @@
 * @uses Util
 */
 
-define(["utils/util"],
-    function (UtilMisc) {
+define(["dojo/_base/lang", "utils/util"],
+    function (lang, UtilMisc) {
         "use strict";
 
         var body = $("body"),
@@ -152,7 +152,7 @@ define(["utils/util"],
              * @return {Object}         This
              * @chainable
              */
-            tooltipster: function (target, type, action) {
+            tooltipster: function (target, type, action, options) {
                 var attr;
                 target = target || $("body");
 

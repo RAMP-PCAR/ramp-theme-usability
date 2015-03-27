@@ -19,8 +19,8 @@ module.exports = (grunt) ->
         ]
         
     
-    console.log grunt.config 'copy.configBuild'
-    console.log grunt.config 'copy.wetboewBuild'
+    console.log grunt.config 'copy'
+    #console.log grunt.config 'copy.wetboewBuild'
 
 
     require('./' + corepath + 'grunt/prep') ( grunt )

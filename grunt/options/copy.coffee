@@ -25,22 +25,8 @@ module.exports =
         cwd: '<%= pkg.themepath %>lib/wet-boew/dist/unmin'
         
     wetboewDist:
-        expand: true
-        cwd: 'lib/wet-boew/dist'
-        src: [
-            '**/*.*'
-            '!ajax/**/*.*'
-            '!**/logo.*'
-            '!**/favicon*.*'
-            '!demos/**/*.*'
-            '!docs/**/*.*'
-            '!test/**/*.*'
-            '!theme/**/*.*'
-            '!unmin/**/*.*'
-            '!*.html'
-        ]
-        dest: 'dist/js/lib/wet-boew/'
-
+        cwd: '<%= pkg.themepath %>lib/wet-boew/dist'
+        
     polyfillBuild:
         expand: true
         cwd: 'src/js/polyfill'
@@ -148,21 +134,3 @@ module.exports =
         cwd: 'lib/fontawesome/'
         src: 'fonts/**/*.*'
         dest: 'dist/css/'
-
-    deploy:
-        expand: true
-        cwd: 'dist'
-        src: '**/*.*'
-        dest: '<%= pkg.ramp.deployFolder %>/'
-
-    demo:
-        expand: true
-        cwd: 'dist'
-        src: '**/*.*'
-        dest: 'demos/NRSTC/' + process.env.TRAVIS_TAG + '/<%= pkg.name %>' 
-
-    api:
-        expand: true
-        cwd: 'docs'
-        src: '**/*.*'
-        dest: 'api/' + process.env.TRAVIS_TAG + '/' 

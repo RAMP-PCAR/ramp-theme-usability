@@ -63,7 +63,8 @@
         "request": "~2.34.0",
         "time-grunt": "~1.0.0",
         "z-schema": "~3.1.0",
-        "grunt-jsonlint": "~1.0.4"
+        "grunt-jsonlint": "~1.0.4",
+        "load-grunt-config": "~0.16.0"
     },      
 
     "deployFolder": "//sncr01wbingsdv1.ncr.int.ec.gc.ca/Drive-E/wwwroot/RAMP_Sample/w4/usability",

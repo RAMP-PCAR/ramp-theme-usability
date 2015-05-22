@@ -17,12 +17,7 @@ module.exports = (grunt) ->
             path.join(process.cwd(), corepath, 'grunt/options')
             path.join(process.cwd(), 'grunt/options')
         ]
-        
     
-    console.log grunt.config 'copy'
-    #console.log grunt.config 'copy.wetboewBuild'
-
-
     require('./' + corepath + 'grunt/prep') ( grunt )
 
     @

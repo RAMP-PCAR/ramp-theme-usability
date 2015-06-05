@@ -2,10 +2,10 @@
     "name": "ramp-theme-usability",
     "subname": "Reusable Accessible Mapping Platform - Usability Theme",
 <<<<<<< Updated upstream
-    "version": "5.4.0-rc3",
+    "version": "5.4.0",
     "description": "RAMP GIS viewer - Elk; Sample of an implementation of RAMP with Usability Theme",
 =======
-    "version": "5.4.0-rc2",
+    "version": "5.4.0",
     "description": "RAMP GIS viewer - Groundhog; Sample of an implementation of RAMP with Usability Theme",
 >>>>>>> Stashed changes
     "main": "index.js",

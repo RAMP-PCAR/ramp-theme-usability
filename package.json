@@ -2,9 +2,9 @@
     "name": "ramp-theme-usability",
     "subname": "Reusable Accessible Mapping Platform - Usability Theme",
 <<<<<<< HEAD
-    "version": "5.4.0-1",
+    "version": "5.5.0-1",
 =======
-    "version": "5.4.0-1",
+    "version": "5.5.0-1",
 >>>>>>> master
     "description": "RAMP GIS viewer - Elk; Sample of an implementation of RAMP with Usability Theme",
     "main": "index.js",

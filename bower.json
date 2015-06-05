@@ -1,10 +1,6 @@
 {
     "name": "ramp-theme-usability",
-<<<<<<< HEAD
     "version": "5.5.0-1",
-=======
-    "version": "5.5.0-1",
->>>>>>> master
     "homepage": "http://ramp-pcar.github.io",
     "authors": [
         "BeSD - SA Team"
@@ -28,11 +24,7 @@
         "./lib"
     ],
     "dependencies": {
-<<<<<<< HEAD
         "ramp-pcar": "https://github.com/RAMP-PCAR/RAMP-PCAR.git#v5.5.0-1",
-=======
-        "ramp-pcar": "https://github.com/RAMP-PCAR/RAMP-PCAR.git#v5.5.0-1",
->>>>>>> master
         "theme-gcwu-fegc": "https://github.com/RAMP-PCAR/ramp-wet-dep/raw/dep/v4.0.5/theme-gcwu-fegc.zip"
     },
     "moduleType": [

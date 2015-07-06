@@ -1,7 +1,8 @@
 ﻿/*global define, TimelineLite, TweenLite, $ */
 
 /**
-* This submodule contains theme-specific classes with animation sequences such as Full Screen transition or tooltip setter helper method.
+* This submodule contains theme-specific classes with animation sequences such as Full Screen transition or tooltip
+* setter helper method.
 *
 * @module RAMP
 * @submodule Theme
@@ -15,24 +16,24 @@
 * @uses Util
 */
 
-define(["utils/util"],
+define(['utils/util'],
     function (UtilMisc) {
-        "use strict";
+        'use strict';
 
-        var body = $("body"),
-            bodyHeaderImage = body.find(".pseudo-header"),
-            wbCore = $("main"),
-            wbFoot = $("footer"),
+        var body = $('body');
+        var bodyHeaderImage = body.find('.pseudo-header');
+        var wbCore = $('main');
+        var wbFoot = $('footer');
 
-            megaMenuDiv = $("#wb-sm"),
-            navigation = $("#wb-bar"),
-            title = navigation.next(),
+        var megaMenuDiv = $('#wb-sm');
+        var navigation = $('#wb-bar');
+        var title = navigation.next();
 
-            header = $("body>header"),
+        var header = $('body>header');
 
-            transitionDuration = 0.5,
+        var transitionDuration = 0.5;
 
-            layout = {
+        var layout = {
                 headerHeight: 207,
                 headerHeightCollapsed: 61,
 
@@ -41,32 +42,42 @@ define(["utils/util"],
 
                 //subtitleHeight: 35,
 
-                toolbarHeight: 32
-            },
+                toolbarHeight: 32,
+            };
 
-            // height gain from the fullscreening the template
-            heightGain = layout.headerHeight - layout.headerHeightCollapsed + layout.footerHeight - layout.footerHeightCollapsed,
+        // height gain from the fullscreening the template
+        var heightGain = layout.headerHeight - layout.headerHeightCollapsed +
+                         layout.footerHeight - layout.footerHeightCollapsed;
 
-            isFullScreen = false,
-            
-            fullScreenTimeLine = new TimelineLite({ paused: true }),
-            subpanelTimeline = new TimelineLite();
+        var isFullScreen = false;
+
+        var fullScreenTimeLine = new TimelineLite({ paused: true });
+        var subpanelTimeline = new TimelineLite();
 
         // tweening wet template parts
         fullScreenTimeLine
-                .to(header, transitionDuration, { top: navigation.outerHeight() * -1, position: "relative", ease: "easeOutCirc" }, 0)
-                .set([navigation, megaMenuDiv], { display: "none !important" })
+                .to(header, transitionDuration,
+                    { top: navigation.outerHeight() * -1, position: 'relative', ease: 'easeOutCirc' }, 0)
+                .set([navigation, megaMenuDiv], { display: 'none !important' })
 
-                .to(title, transitionDuration, { top: "-22px" }, 0)
+                .to(title, transitionDuration, { top: '-22px' }, 0)
 
-                // Firefox doesn't support background-position-y - http://stackoverflow.com/questions/9653685/is-background-position-x-background-position-y-a-standard-w3c-css-property/9653939#9653939
-                .fromTo(body, transitionDuration, { backgroundPosition: "center 43px" }, { backgroundPosition: "center -26px", ease: "easeOutCirc" }, 0)
-                // apparently there is a bug in Chrome or GSAP when animating several background images; this is a workaround for now; http://greensock.com/forums/topic/11463-animating-backgroundposition-for-several-background-images/#entry46589
-                .fromTo(bodyHeaderImage, transitionDuration, { backgroundPosition: "center 43px" }, { backgroundPosition: "center -26px", ease: "easeOutCirc" }, 0)
-                .to(wbCore, transitionDuration, { top: layout.headerHeightCollapsed, bottom: layout.footerHeightCollapsed, ease: "easeOutCirc" }, 0)
-                .to(wbFoot, transitionDuration, { height: layout.footerHeightCollapsed, ease: "easeOutCirc" }, 0)
+                // Firefox doesn't support background-position-y -
+                // http://stackoverflow.com/questions/9653685/is-background-position-x-background-position-y-a-standard-w3c-css-property/9653939#9653939
+                .fromTo(body, transitionDuration, { backgroundPosition: 'center 43px' },
+                    { backgroundPosition: 'center -26px', ease: 'easeOutCirc' }, 0)
 
-            .call(function () { body.addClass("full-screen"); }) // set full-screen class here, not in the callback since callbacks can be overwritten by fullScreenCallback function
+                // apparently there is a bug in Chrome or GSAP when animating several background images;
+                //  this is a workaround for now;
+                // http://greensock.com/forums/topic/11463-animating-backgroundposition-for-several-background-images/#entry46589
+                .fromTo(bodyHeaderImage, transitionDuration, { backgroundPosition: 'center 43px' },
+                    { backgroundPosition: 'center -26px', ease: 'easeOutCirc' }, 0)
+                .to(wbCore, transitionDuration,
+                    { top: layout.headerHeightCollapsed, bottom: layout.footerHeightCollapsed, ease: 'easeOutCirc' }, 0)
+                .to(wbFoot, transitionDuration, { height: layout.footerHeightCollapsed, ease: 'easeOutCirc' }, 0)
+
+            .call(function () { body.addClass('full-screen'); }) // set full-screen class here, not in the callback
+            // since callbacks can be overwritten by fullScreenCallback function
 
             .add(subpanelTimeline, 0); // special timeline to tween subpanels
 
@@ -79,29 +90,48 @@ define(["utils/util"],
         function _toggleFullScreenMode(fullscreen) {
             subpanelTimeline
                 .clear() // need to recreate this timeline every time to capture newly created subpanels
-                .fromTo(".sub-panel-container.summary-data-details", transitionDuration,
-                    { top: layout.headerHeight + layout.toolbarHeight, bottom: layout.footerHeight },
-                    { top: layout.headerHeightCollapsed + layout.toolbarHeight, bottom: layout.footerHeightCollapsed, ease: "easeOutCirc" }, 0)
-                .fromTo(".sub-panel-container.full-data-details", transitionDuration,
-                    { top: layout.headerHeight, bottom: layout.footerHeight },
-                    { top: layout.headerHeightCollapsed, bottom: layout.footerHeightCollapsed, ease: "easeOutCirc" }, 0);
+                .fromTo('.sub-panel-container.summary-data-details', transitionDuration,
+                    {
+                        top: layout.headerHeight + layout.toolbarHeight,
+                        bottom: layout.footerHeight,
+                    },
+                    {
+                        top: layout.headerHeightCollapsed + layout.toolbarHeight,
+                        bottom: layout.footerHeightCollapsed,
+                        ease: 'easeOutCirc',
+                    }, 0)
+                .fromTo('.sub-panel-container.full-data-details', transitionDuration,
+                    {
+                        top: layout.headerHeight,
+                        bottom: layout.footerHeight,
+                    },
+                    {
+                        top: layout.headerHeightCollapsed,
+                        bottom: layout.footerHeightCollapsed,
+                        ease: 'easeOutCirc',
+                    }, 0);
 
             isFullScreen = UtilMisc.isUndefined(fullscreen) ? !isFullScreen : fullscreen;
 
             if (isFullScreen) {
-                // need to tween datatables separately since it's very cumbersome to calculate their exact height - easier just to adjust height up/down by height gained when fullscreening the template
+                // need to tween datatables separately since it's very cumbersome to calculate their exact height -
+                // easier just to adjust height up/down by height gained when fullscreening the template
                 TweenLite
-                    .to(".full-data-mode .dataTables_scrollBody", transitionDuration,
-                        { height: "+=" + heightGain, ease: "easeOutCirc", delay: 0.02 }); // animate height of the datatable scrollBody since it's explicitly set ,
+                    .to('.full-data-mode .dataTables_scrollBody', transitionDuration,
+
+                        // animate height of the datatable scrollBody since it's explicitly set ,
+                        { height: '+=' + heightGain, ease: 'easeOutCirc', delay: 0.02 });
 
                 fullScreenTimeLine.play();
 
             } else {
                 TweenLite
-                    .to(".full-data-mode .dataTables_scrollBody", transitionDuration - 0.02,
-                        { height: "-=" + heightGain, ease: "easeInCirc" }); // animate height of the datatable scrollBody since it's explicitly set ,
+                    .to('.full-data-mode .dataTables_scrollBody', transitionDuration - 0.02,
 
-                body.removeClass("full-screen");
+                        // animate height of the datatable scrollBody since it's explicitly set ,
+                        { height: '-=' + heightGain, ease: 'easeInCirc' });
+
+                body.removeClass('full-screen');
                 fullScreenTimeLine.reverse();
             }
         }
@@ -144,7 +174,8 @@ define(["utils/util"],
                 _toggleFullScreenMode(fullscreen);
 
                 return this;
-            }
+            },
         };
     }
+
 );
